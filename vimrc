@@ -18,14 +18,21 @@ Plugin 'VundleVim/Vundle.vim'
 "Color scheme
 Plugin 'morhetz/gruvbox'
 
+" Make gVim colorschemes works in terminal Vim
+Plugin 'godlygeek/csapprox'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
+" Git integration
+Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-fugitive'
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
+
 " You complete me
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
@@ -38,6 +45,7 @@ Plugin 'fatih/vim-go'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,4 +64,15 @@ filetype plugin indent on    " required
 "
 " colorscheme calls go after Plugin declarations
 colorscheme gruvbox
+set background=dark
+set t_Co=256
+
+" Go config
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
 autocmd VimEnter * NERDTree
